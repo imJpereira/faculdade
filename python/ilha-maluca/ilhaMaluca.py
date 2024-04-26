@@ -40,6 +40,7 @@ while True:
     (3) Difícil     
           
           ''')
+    
     dificuldade = input('Sua escolha: ')
 
     if dificuldade == '2':
@@ -144,7 +145,7 @@ while True:
         os.system('cls')
         os.system('color 2')
         print('PARABENS! Você zerou o jogo')
-        verMapa = input('Digite qualquer coisa para ver o mapa ')
+        verMapa = input('Digite qualquer coisa para revelar o mapa ')
         print("              ____        ")
         print("          .-'`    `'-.")
         print("       __/  __      __\__ ")
