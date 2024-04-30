@@ -2,7 +2,7 @@
 
 Este programa simula batalhas entre Pomekons, onde cada treinador coloca um Pomekon na batalha. O vencedor é determinado pelo Pomekon com o maior valor de golpe, calculado da seguinte maneira:
 
-*valorGolpe = ((ataque + defesa) / 2) + bônus*
+**valorGolpe = ((ataque + defesa) / 2) + bônus**
 
 O bônus é atribuído ao Pomekon do treinador que estiver em um level de valor par.
 
