@@ -11,12 +11,6 @@ def checaPalavraChave():
                 palavraEscondida += letra
     return palavraEscondida
 
-def menu():
-    print()
-    print('(0) Sair')
-    print('(1) Jogar')
-    print('(2) Solicitar dica')
-
 ##################################################
 
 paraOuContinua = '1'
@@ -33,9 +27,10 @@ while paraOuContinua == '1':
     dicasSolicitadas = []
     letrasEscolhidas = []
     erros = 0
+    vencedor = ''
 
     for contador in range(1, 4):
-        dica = input(f'Dica {contador}: ')
+        dica = input(f'Dica {contador}: ').capitalize()
         dicas.append(dica)
 
     while True:
@@ -45,25 +40,34 @@ while paraOuContinua == '1':
 
             novaPalavra = checaPalavraChave()
             print(novaPalavra)
+            print('----------------')
 
             if erros == 6 :
+                vencedor = desafiante
                 print(f'{desafiante} venceu o jogo!')
                 print(f'A palavra era: {palavraChave}')
                 menuEscolha = '0'
                 break
 
             if '*' not in novaPalavra:
+                vencedor = competidor
                 print(f'{competidor} venceu o jogo!')
                 menuEscolha = '0'
                 break
 
             if erros != 0:
                 print(f'Erros: {erros}')
+                print()
 
             if len(dicasSolicitadas) > 0:
-                print(dicasSolicitadas)
+                for dica in dicasSolicitadas:
+                    print(dica)
+                print('----------------')
 
-            menu()
+            print()
+            print('(0) Sair')
+            print('(1) Jogar')
+            print('(2) Solicitar dica')
             menuEscolha = input('Sua escolha: ')
             print()
         
@@ -88,6 +92,8 @@ while paraOuContinua == '1':
                 erros += 1
 
         elif menuEscolha == '0':
+            if not vencedor:
+                os.system('cls')
             break
         
             
